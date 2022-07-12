@@ -1,15 +1,29 @@
 import React from 'react'
 import Conditional from './Conditional'
 import Inputcomp from './Inputcomp'
+import { useGlobalContext } from '../context'
+import Clientcompany from './Clientcompany'
+import Footercomp from './Footercomp'
+import ThankYou from '../ThankYou'
+
 
 const Formcomp = () => {
-    const { page, setPage } = useGlobalContext();
+    const { page, selected, userName, setUserName } = useGlobalContext();
     return (
-        <>
-            if(page===1 && <Inputcomp label={"What is your Full Name?"} placeholder={"Ex : Pankaj Armo"} />)
+        <form className='form-comp'>
+            {page === 1 && (<Inputcomp value={userName} setValue={setUserName} label={"What's Your Full Name?"} placeholder={"Your Name"} />)}
+            {page === 2 && (
+                <>
+                    <Conditional />
+                    {selected && <> <Clientcompany />
+                        <Footercomp />
+                    </>
+                    }
+                </>
+            )}
+            {page > 2 && <ThankYou />}
 
-            <Conditional />
-        </>
+        </form>
     )
 }
 

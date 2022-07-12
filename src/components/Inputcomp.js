@@ -1,11 +1,18 @@
 import React from 'react'
+import { useGlobalContext } from '../context'
 
-const Inputcomp = ({ label, placeholder }) => {
+const Inputcomp = ({ value, setValue, label, placeholder }) => {
+
     return (
         <>
             <div className='input-field'>
-                <label for={label}>{label}</label>
-                <input id={label} type='text' placeholder={placeholder}></input>
+                <label htmlFor={label}>{label}</label>
+                <input
+                    id={label}
+                    type='text'
+                    placeholder={placeholder}
+                    onChange={e => (setValue(e.target.value))}
+                    value={value}></input>
             </div>
         </>
     )

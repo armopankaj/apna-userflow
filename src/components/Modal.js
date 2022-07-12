@@ -8,6 +8,7 @@ import './modal.css'
 export default function Modal() {
 
     //Creating a react portal which renders it separately 
+    //ReactDom.createortal()p
     return (
 
 

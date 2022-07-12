@@ -1,11 +1,23 @@
 import React from 'react'
+import { useGlobalContext } from '../context'
 
-const Head = ({ title, subtitle }) => {
+const Head = () => {
+    const { page } = useGlobalContext();
+    let title, subtitle
+    if (page === 1) {
+        title = "Welcome !"
+        subtitle = "Since this is your first job posting, let’s setup your company account"
+    } else if (page == 2) {
+
+        title = "Whom are you hiring for?"
+        subtitle = "Choose any option below"
+
+    }
     return (
         <>
 
-            <h1>{title}</h1>
-            <h4>{subtitle}</h4>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
         </>
     )
 }
