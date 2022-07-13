@@ -29,9 +29,9 @@ const Form = () => {
                 <div className='body'>
                     <Formcomp />
                 </div>
-                <div className='footer'>
-                    {page <= 2 && <Button />}
-                </div>
+
+                {page <= 2 && <Button />}
+
             </div>
 
 

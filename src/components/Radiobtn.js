@@ -1,47 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 import company from "../logos/corporate_fare.svg";
 import group from "../logos/Group.svg";
-const Radiobtn = ({ logo, title, subtitle, onClick }) => {
+const Radiobtn = ({ obj, handleClick }) => {
     const {
         selected,
         setSelected,
         setCompanyName,
         setClientsName,
         setconsultancyName,
-        website,
         setWebsite,
-        keepChecked, isKeepChecked
+        employeeNum, setEmployeeNum
     } = useGlobalContext();
-    const handleClick = (e) => {
+
+    useEffect(() => {
         // id is changed i.e radio button is changed the previous fields are
         //made empty
-        if (e.target.id === "My Own Company") {
+        if (selected === 1) {
             setClientsName("");
             setconsultancyName("");
             setWebsite("");
-        } else if (e.target.id === "My Clients") {
+
+        } else if (selected === 2) {
             setCompanyName("");
             setWebsite("");
-            console.log("sdasd");
+
+
         }
-        //updating the selected id with the respective value
-        setSelected(e.target.id);
-        console.log(selected, "this is radio value");
-    };
+
+
+
+    }, [selected])
 
     return (
-        <div className="card">
+        <div className={`card${selected === obj.id ? "active" : ""}`}>
             <div className="card-content">
-                <label className="big" onClick={handleClick}>
-                    <input type="radio" name="hiring" id={title} />
+                <label className="big" >
+                    <input type="radio" name="hiring" id={obj.title} onChange={() => handleClick(obj)} checked={obj.id === selected} key={obj.id} />
                     <div className="card-detail">
                         <div className="logo-detail">
-                            <img src={logo} alt="logo" id={title} />
-                            <p>{title}</p>
+                            <img src={obj.logo} alt="logo" id={obj.title} />
+                            <p>{obj.title}</p>
                         </div>
 
-                        <p className="logo-subtitle">{subtitle}</p>
+                        <p className="logo-subtitle">{obj.subtitle}</p>
                     </div>
                 </label>
             </div>

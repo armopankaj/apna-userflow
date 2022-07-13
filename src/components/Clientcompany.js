@@ -6,7 +6,7 @@ const Clientcompany = () => {
     const { selected, companyName, setCompanyName, clientsName, setClientsName, consultancyName, setconsultancyName, website, setWebsite } = useGlobalContext();
     return (
         <>
-            {selected === "My Own Company" && (
+            {selected === 1 && (
                 <>
                     <Inputcomp
                         label={"Your company name"}
@@ -21,7 +21,7 @@ const Clientcompany = () => {
                 </>
 
             )}
-            {selected === "My Clients" && (
+            {selected === 2 && (
                 <>
                     <Inputcomp
                         label={"Clients you normally hire for"}
