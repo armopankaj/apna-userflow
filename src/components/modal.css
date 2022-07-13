@@ -26,7 +26,9 @@
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 4px;
+    gap: 11.5px;
+    margin-left: 15px;
+    margin-top: 8px;
 }
 
 .back-btn img {
@@ -200,6 +202,19 @@
 
 }
 
+.cardactive {
+    cursor: pointer;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: flex-start;
+    padding: 16px 24px 16px 16px;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid #388BF2;
+    border-radius: 8px;
+
+}
+
 
 .card-content {
     display: flex;
@@ -282,6 +297,7 @@
 .footer-comp {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
@@ -298,18 +314,23 @@
 
 }
 
-.num-btn {
+/* .num-btn {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
     flex-wrap: wrap;
+} */
+.sizebuttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.num-btn button {
+.sizebuttons .button {
     box-sizing: border-box;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -318,14 +339,38 @@
     gap: 10px;
 
     background: #FFFFFF;
-
-
     border: 1px solid #DFE1E6;
     border-radius: 8px;
-
 }
 
-.num-btn button:focus {
+.buttonactive {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 10px;
+    background: #EBF3FE;
+    border: 2px solid #388BF2;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .num-btn button:hover {
     box-sizing: border-box;
 
     display: flex;
@@ -335,31 +380,13 @@
     padding: 10px 12px;
     gap: 10px;
 
-    background-color: #2BB792;
-    color: #FFFFFF;
+    background: #EBF3FE;
 
-    border: 1px solid #DFE1E6;
+
+    border: 2px solid #388BF2;
     border-radius: 8px;
 
-}
-
-.num-btn button:hover {
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 12px;
-    gap: 10px;
-
-    background: #2BB792;
-
-    color: #FFFFFF;
-    border: 1px solid #DFE1E6;
-    border-radius: 8px;
-
-}
+} */
 
 .footer-button:hover {
     background: #1F8268;
@@ -425,7 +452,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-    color: white;
+    color: #B3BAC5;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -447,7 +474,6 @@
         /* background: orange; */
         position: relative;
         width: 688px;
-        /* height: 640px; */
         padding: 16px;
         margin: auto;
         min-height: 348px;
@@ -573,7 +599,7 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
-        color: white;
+        color: #B3BAC5;
         flex: none;
         order: 0;
         flex-grow: 0;
@@ -605,6 +631,22 @@
 
 
     }
+
+    .cardactive {
+        cursor: pointer;
+        display: flex;
+        height: 132px;
+        width: 264px;
+        align-items: flex-start;
+        padding: 16px 24px 16px 16px;
+        gap: 10px;
+        background: #FFFFFF;
+        border: 1px solid #388BF2;
+        border-radius: 8px;
+
+
+    }
+
 
     .big {
         display: flex;
@@ -651,8 +693,9 @@
 
     .footer-comp {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
+        flex-wrap: wrap;
         padding: 0px;
         gap: 8px;
         margin-top: 16px;
@@ -696,7 +739,7 @@
 
     }
 
-    .num-btn button:focus {
+    .num-btnactive button {
         box-sizing: border-box;
 
         display: flex;
@@ -706,13 +749,15 @@
         padding: 10px 12px;
         gap: 10px;
 
-        background-color: #2BB792;
-        color: #FFFFFF;
+        background-color: #EBF3FE;
 
-        border: 1px solid #DFE1E6;
+        border: 2px solid #388BF2;
+
         border-radius: 8px;
 
     }
+
+
 
     .num-btn button:hover {
         box-sizing: border-box;
@@ -724,12 +769,48 @@
         padding: 10px 12px;
         gap: 10px;
 
-        background: #2BB792;
 
-        color: #FFFFFF;
-        border: 1px solid #DFE1E6;
+
+
+        border: 2px solid #388BF2;
         border-radius: 8px;
 
     }
+
+    .sizebuttons {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .sizebuttons .button {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 12px;
+        gap: 10px;
+
+        background: #FFFFFF;
+        border: 1px solid #DFE1E6;
+        border-radius: 8px;
+    }
+
+    .buttonactive {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 12px;
+        gap: 10px;
+        background: #EBF3FE;
+        border: 2px solid #388BF2;
+        border-radius: 8px;
+    }
+
+
 
 }
