@@ -8,6 +8,7 @@ const Radiobtn = ({ obj, handleClick }) => {
     setClientsName,
     setConsultancyName,
     setWebsite,
+    setEmployeeNum,
   } = useGlobalContext();
 
   useEffect(() => {
@@ -16,11 +17,11 @@ const Radiobtn = ({ obj, handleClick }) => {
     if (selected === 1) {
       setClientsName("");
       setConsultancyName("");
-      setWebsite("");
     } else if (selected === 2) {
       setCompanyName("");
-      setWebsite("");
     }
+    setWebsite("");
+    // setEmployeeNum("");
   }, [selected]);
 
   return (
