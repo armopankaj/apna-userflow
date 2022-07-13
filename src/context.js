@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
     const [userName, setUserName] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [clientsName, setClientsName] = useState("");
-    const [consultancyName, setconsultancyName] = useState("");
+    const [consultancyName, setConsultancyName] = useState("");
     const [website, setWebsite] = useState("");
     const [employeeNum, setEmployeeNum] = useState("");
 
@@ -75,7 +75,7 @@ const AppProvider = ({ children }) => {
                 clientsName,
                 setClientsName,
                 consultancyName,
-                setconsultancyName,
+                setConsultancyName,
                 website,
                 setWebsite,
                 inputVal,

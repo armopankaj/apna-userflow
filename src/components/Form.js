@@ -1,44 +1,33 @@
-import React, { useState } from 'react'
+import React from "react";
 
-import Inputcomp from './Inputcomp';
-import Head from './Head';
-import ApnaLogo from './ApnaLogo';
-import Formcomp from './Formcomp';
-import Footercomp from './Footercomp'
-import { useGlobalContext } from '../context';
-import Button from './Button';
-import Backbtn from './Backbtn';
+import Head from "./Head";
+import ApnaLogo from "../util/ApnaLogo";
+import Formcomp from "./Formcomp";
+import { useGlobalContext } from "../context";
+import Button from "./Button";
+import Backbtn from "../util/Backbtn";
 
 const Form = () => {
-    const { page } = useGlobalContext();
+  const { page } = useGlobalContext();
 
+  return (
+    <>
+      <div className="main-container">
+        {page === 2 && <Backbtn />}
+        <div className="header-container">
+          <ApnaLogo />
+          <div className="header-txt">
+            <Head />
+          </div>
+        </div>
+        <div className="body">
+          <Formcomp />
+        </div>
 
+        {page <= 2 && <Button />}
+      </div>
+    </>
+  );
+};
 
-
-    return (
-        <>
-
-            <div className='main-container'>
-                {page === 2 && <Backbtn />}
-                <div className='header-container'>
-                    <ApnaLogo />
-                    <div className='header-txt'>
-                        <Head />
-                    </div>
-                </div>
-                <div className='body'>
-                    <Formcomp />
-                </div>
-
-                {page <= 2 && <Button />}
-
-            </div>
-
-
-        </>
-
-
-    )
-}
-
-export default Form
+export default Form;
